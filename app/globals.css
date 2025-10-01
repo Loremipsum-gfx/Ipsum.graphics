@@ -1,26 +1,406 @@
+@import url("https://use.typekit.net/ega0alp.css");
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-primary: rgba(170, 0, 255, 1);
+  --color-primary-dark: rgba(72, 0, 172, 1);
+  --color-primary-transparent: rgba(72, 0, 172, 0.1);
+  --color-primary-transparent-backdrop: rgba(50, 35, 70, 0.9);
+  --color-light: rgba(255, 245, 255, 1);
+  --color-dark: rgba(50, 35, 70, 1);
+  --color-blacks: rgba(20, 15, 30, 1);
+  --color-neg: rgb(0 255 140);
+
+  --gradient-primary: linear-gradient(
+    45deg,
+    var(--color-primary),
+    var(--color-primary-dark)
+  );
+  --gradient-primary-repeat: linear-gradient(
+    45deg,
+    var(--color-primary),
+    var(--color-primary-dark),
+    var(--color-primary),
+    var(--color-primary-dark)
+  );
+
+  --font-headers: "eurostile-condensed", sans-serif;
+  --font-body: "raleway", sans-serif;
+
+  --shadow-btn: 0px 0px 0px 0.35rem var(--color-l-overlay);
+  --shadow-btn-active: 0px 0px 0px 0.35rem var(--color-l-overlay),
+    0px 10px 30px -10px var(--color-primary);
+  --shadow-rotation: 0px 20px 40px -30px var(--color-primary);
+
+  --animation-animateBackground: animateBackground 10s ease-in-out infinite;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
+}
+::selection {
+  color: white;
+  background-color: var(--color-neg);
+}
+::-moz-selection {
+  color: white;
+  background-color: var(--color-neg);
+}
+img,
+picture,
+svg video {
+  display: block;
+}
+html {
+  color-scheme: light;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+h1,
+h2,
+h3,
+h4,
+nav > a {
+  @apply font-headers font-black italic uppercase;
+}
+h1 span.highlight,
+h2 span.highlight,
+h3 span.highlight,
+h4 span.highlight {
+  @apply p-2.5;
+  display: inline-flex;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: inherit;
+}
+h2,
+h3,
+h4 {
+  @apply pb-6 font-black italic md:pb-8 text-6xl sm:text-[60px] md:text-[80px] xl:text-[100px] leading-[0.75] sm:leading-[0.65];
+}
+h5,
+h6 {
+  @apply pb-4 font-bold text-xl;
+}
+body,
+p,
+a,
+button,
+b,
+i,
+em,
+strong {
+  @apply font-body leading-6;
+}
+span {
+  display: inline-flex;
+  line-height: inherit;
+}
+#lorem-menu-frame:before,
+#lorem-menu-frame:after {
+  content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi volutpat arcu gravida elementum sagittis. Phasellus bibendum nunc quis viverra rutrum. Fusce nec viverra magna. Integer tristique pellentesque convallis. Donec lacinia dui massa, dictum eleifend ante pharetra vulputate. Ut odio nisi, suscipit ut venenatis quis, pellentesque eu arcu. Nam pulvinar, nisi a luctus gravida, libero arcu ultricies lorem, sit amet molestie turpis libero sit amet nunc. Nullam pretium tempus dui sed iaculis.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi volutpat arcu gravida elementum sagittis. Phasellus bibendum nunc quis viverra rutrum. Fusce nec viverra magna. Integer tristique pellentesque convallis. Donec lacinia dui massa, dictum eleifend ante pharetra vulputate. Ut odio nisi, suscipit ut venenatis quis, pellentesque eu arcu. Nam pulvinar, nisi a luctus gravida, libero arcu ultricies lorem, sit amet molestie turpis libero sit amet nunc. Nullam pretium tempus dui sed iaculis.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi volutpat arcu gravida elementum sagittis. Phasellus bibendum nunc quis viverra rutrum. Fusce nec viverra magna. Integer tristique pellentesque convallis. Donec lacinia dui massa, dictum eleifend ante pharetra vulputate. Ut odio nisi, suscipit ut venenatis quis, pellentesque eu arcu. Nam pulvinar, nisi a luctus gravida, libero arcu ultricies lorem, sit amet molestie turpis libero sit amet nunc. Nullam pretium tempus dui sed iaculis.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi volutpat arcu gravida elementum sagittis. Phasellus bibendum nunc quis viverra rutrum. Fusce nec viverra magna. Integer tristique pellentesque convallis. Donec lacinia dui massa, dictum eleifend ante pharetra vulputate. Ut odio nisi, suscipit ut venenatis quis, pellentesque eu arcu. Nam pulvinar, nisi a luctus gravida, libero arcu ultricies lorem, sit amet molestie turpis libero sit amet nunc. Nullam pretium tempus dui sed iaculis Ut odio nisi, suscipit ut venenatis quis, pellentesque eu arcu. Nam pulvinar, nisi a luctus gravida, libero arcu ultricies lorem, sit amet molestie turpis libero sit amet nunc. Nullam pretium tempus dui sed iaculis Ut odio nisi, suscipit ut venenatis quis, pellentesque eu arcu. Nam pulvinar, nisi a luctus gravida, libero arcu ultricies lorem, sit amet molestie turpis libero sit";
+  min-width: 4000px;
+}
+body {
+  display: block;
+  position: relative;
+  font-family: var(--font-body);
+  line-height: 1.3;
+  text-align: center;
+  background-color: var(--color-dark);
+  color: var(--color-dark);
+  width: 100%;
+  height: 100vh;
+}
+p {
+  width: 100%;
+  font-size: 18px;
+}
+p + p {
+  margin-top: 2rem;
+}
+p a {
+  text-decoration: none;
+  color: var(--color-primary);
+  background-image: linear-gradient(
+    45deg,
+    var(--color-primary),
+    var(--color-primary)
+  );
+  background-size: 0% 1px;
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  transition: background 0.5s ease;
+}
+a:hover {
+  outline: none;
+  background-size: 100% 1px;
+  transition: background 1.5s ease;
+}
+button:hover svg,
+.button:hover svg,
+button:hover img,
+.button:hover img {
+  transform: rotate(-12deg);
+}
+main p a {
+  font-weight: 700;
+  text-decoration: none;
+  background-image: var(--gradient-primary);
+  background-size: 20px 1px;
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  transition: background 500ms ease;
+}
+main p a:hover,
+main p a:focus {
+  outline: none;
+  background-size: 100% 1px;
+  transition: background 150ms ease;
+}
+#loremipsum-root {
+  height: 100dvh;
+}
+body.loading #lorem-menu-button {
+  opacity: 0;
+}
+#lorem-menu-button {
+  display: flex;
+  width: 75px;
+  aspect-ratio: 1;
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  background: var(--color-dark);
+  border-radius: 100%;
+  transition: 500ms ease all;
+  opacity: 1;
+  cursor: pointer;
+  z-index: 2;
+}
+#lorem-menu-button:hover {
+  animation: scaleUpHover 1s ease-out forwards;
+}
+
+#lorem-menu-button:hover svg * {
+  fill: var(--color-primary);
+}
+body.menu #lorem-menu-button {
+  background: var(--color-black);
+}
+#lorem-menu-button svg * {
+  fill: var(--color-light);
+  transition: 500ms ease all;
+}
+body.menu #lorem-menu-button rect:nth-child(1) {
+  transform: rotate(45deg) translate3d(4px, -1px, 0px) scaleX(1.4);
+  transform-origin: center;
+}
+body.menu #lorem-menu-button rect:nth-child(2) {
+  transform: scaleX(0);
+  transform-origin: 23px 0px;
+}
+body.menu #lorem-menu-button rect:nth-child(3) {
+  transform: rotate(-45deg) translate3d(4px, 1px, 0px) scaleX(1.4);
+  transform-origin: center;
+}
+#lorem-menu {
+  opacity: 0;
+  display: flex;
+  max-width: 100%;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--color-dark);
+  transition: 750ms ease all;
+  transition-delay: 500ms;
+  overflow: hidden;
+}
+nav::before,
+nav::after {
+  -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-color: rgba(170, 0, 255, 1);
+}
+body.menu #lorem-menu {
+  opacity: 1;
+  transition: 750ms ease all;
+  transition-delay: 1000ms;
+}
+#lorem-menu a {
+  position: relative;
+  @apply text-primary text-nowrap leading-[0.85] transition-all;
+}
+#lorem-menu a:hover {
+  color: var(--color-neg);
+}
+#lorem-menu a:hover::before,
+#lorem-menu a:hover::after,
+#lorem-menu a:focus-visible::before,
+#lorem-menu a:focus-visible::after {
+  -webkit-text-stroke-color: var(--color-neg);
+  opacity: 0.25;
+}
+#lorem-menu a:nth-child(odd):hover {
+  padding-left: 1rem;
+}
+#lorem-menu a:nth-child(even):hover {
+  padding-right: 1rem;
+}
+#lorem-menu a:before,
+#lorem-menu a:after {
+  content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi volutpat arcu gravida elementum sagittis. Phasellus bibendum nunc quis viverra rutrum. Fusce nec viverra magna. Integer tristique pellentesque convallis. Donec lacinia dui massa, dictum eleifend ante pharetra vulputate. Ut odio nisi, suscipit ut venenatis quis, pellentesque eu arcu. Nam pulvinar, nisi a luctus gravida, libero arcu ultricies lorem, sit amet molestie turpis libero sit amet nunc. Nullam pretium tempus dui sed iaculis.";
+  display: inline-block;
+  position: absolute;
+  min-width: fit-content;
+  text-wrap: nowrap;
+  text-align: right;
+  line-height: inherit;
+  pointer-events: none;
+  color: transparent;
+  -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-color: var(--color-primary);
+}
+
+#lorem-menu a:before {
+  right: 105%;
+}
+#lorem-menu a:after {
+  left: 105%;
+}
+/* Logo Component */
+body.loading #li-logo {
+  opacity: 0;
+}
+#li-logo {
+  display: flex;
+  position: absolute;
+  top: 2.5rem;
+  left: 2.5rem;
+  width: 50px;
+  transform: scale(1);
+  opacity: 1;
+  z-index: 99;
+}
+#li-logo:hover {
+  animation: scaleUpHover 1s forwards;
+}
+
+body.menu #li-logo {
+  animation: disappear 500ms ease forwards;
+}
+
+/* Main Frame Layout */
+#lorem-frame {
+  display: flex;
+  position: absolute;
+  inset: 1rem;
+  width: calc(100% - 2rem);
+  height: calc(100dvh - 2rem);
+  border-radius: 30px;
+  background: var(--color-light);
+  overflow-x: hidden;
+  overflow-y: scroll;
+  transition: 500ms cubic-bezier(0.5, 0.06, 0.3, 0.9) all;
+  z-index: 1;
+}
+body.menu #lorem-frame,
+body.loading #lorem-frame {
+  height: 0px;
+  transition: 1000ms cubic-bezier(0.5, 0.06, 0.3, 0.9) all;
+  overflow: hidden;
+  border-radius: 10px 10px 100% 100%;
+}
+#lorem-body {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  min-width: calc(100vw - 4rem);
+  min-height: 100vh;
+}
+.content-frame {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  min-height: 33vh;
+  max-width: 95vw;
+  margin: 4rem 0;
+}
+.references {
+  animation: rotate 30s linear infinite;
+}
+@keyframes rotate {
+  to {
+    transform: translate(-33.33%);
   }
 }
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.odometer .odometer-digit {
+  padding-inline: 0.5rem !important;
+  margin-inline: -0.5rem;
+}
+.bg-primary-gradient {
+  background-image: var(--gradient-primary);
+}
+.bg-primary-gradient-repeat {
+  background: var(--gradient-primary-repeat);
+}
+.shadow-btn {
+  box-shadow: 0px 0px 0px 0.35rem var(--color-primary-transparent);
+}
+.shadow-btn:hover {
+  box-shadow: 0px 0px 0px 0.35rem var(--color-primary-transparent),
+    0px 10px 30px -10px var(--color-primary);
+}
+.animateBackground {
+  animation: animateBackground 10s ease-in-out infinite;
+}
+@keyframes animateBackground {
+  0% {
+    background-position: 0%;
+    background-size: 400%;
+  }
+  100% {
+    background-position: 96%;
+    background-size: 400%;
+  }
+}
+.bg-element-r {
+  background-image: url("/graphics/svg/background-stroke.svg");
+  background-repeat: no-repeat;
+  background-position: center right;
+}
+.bg-element-l {
+  background-image: url("/graphics/svg/background-stroke.svg");
+  background-repeat: no-repeat;
+  background-position: center left;
+}
+.card:hover .rotate3d {
+  transform: rotateX(12deg);
+}
+.card:hover + .card .rotate3d {
+  transform: rotateX(10deg);
+}
+.card:hover + .card + .card .rotate3d {
+  transform: rotateX(8deg);
+}
+.odometer {
+  font-family: var(--font-headers) !important;
+}
+.client-logo:hover img {
+  transition: 250ms ease all;
+  transform: rotateX(12deg);
 }
