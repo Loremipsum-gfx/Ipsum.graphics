@@ -309,7 +309,7 @@ body.menu #li-logo {
   width: calc(100% - 2rem);
   height: calc(100dvh - 2rem);
   border-radius: 30px;
-  background: var(--color-light);
+  background-color: var(--color-light);
   overflow-x: hidden;
   overflow-y: scroll;
   transition: 500ms cubic-bezier(0.5, 0.06, 0.3, 0.9) all;
@@ -378,15 +378,11 @@ body.loading #lorem-frame {
     background-size: 400%;
   }
 }
-.bg-element-r {
+.bg-element-c {
   background-image: url("/graphics/svg/background-stroke.svg");
   background-repeat: no-repeat;
-  background-position: center right;
-}
-.bg-element-l {
-  background-image: url("/graphics/svg/background-stroke.svg");
-  background-repeat: no-repeat;
-  background-position: center left;
+  background-position: center;
+  background-size: 65vh;
 }
 .card:hover .rotate3d {
   transform: rotateX(12deg);

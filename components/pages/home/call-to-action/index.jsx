@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 const CallToAction = () => {    
 return (
-<section className="w-full min-h-[75vh] flex justify-center items-center">
+<section className="w-full min-h-[50vh] flex justify-center items-center">
 <motion.div 
 initial={{opacity: 0, translateY: '50px'}}
 whileInView={{opacity: 1, translateY: '0px'}}

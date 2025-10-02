@@ -46,7 +46,7 @@ export default function RootLayout({ children }) {
         <div id="loremipsum-root">
           <Top />
           <Menu />
-          <div id="lorem-frame">
+          <div id="lorem-frame" className="bg-element-c">
             <div id="lorem-body">
               <div className=" w-full m-auto">
                 {children}

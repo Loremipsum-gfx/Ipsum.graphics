@@ -1,16 +1,47 @@
 import Btn from "@/components/ui/Btn";
 import Modal from "@/components/modals";
 import FrontPageAnimation from "./Animation";
+import { motion, useInView } from "framer-motion";   
+import { useState, useRef } from "react";
 
-import { useState } from "react";
 
-const Hero = () => {
+const Hero = ({line_1 = 'Lorem', line_2 = 'Ipsum'}) => {
 	const [popup, setPopup] = useState('');
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: true});
 
 return (
-<header className="flex py-24 lg:py-0">
-    <div className="grid grid-cols-[repeat(16,_1fr)] grid-rows-[repeat(8,_1fr)] w-full h-[90vh] lg:ml-[-1vw]">
-        <h1 className=" leading-[1] col-span-full row-start-1 text-8xl lg:row-start-4 lg:text-[17vw]">Lorem Ipsum</h1>
+<header className="flex py-24 lg:py-0">    
+    <div ref={ref} className="grid grid-cols-[repeat(16,_1fr)] grid-rows-[repeat(8,_1fr)] w-full h-[90vh] lg:ml-[-1vw]">
+        <h1 className="leading-[1] col-span-full row-start-1 text-8xl lg:row-start-4 lg:text-[17vw]">
+            <span className="px-3">
+        {
+        line_1.split('').map((word, index) => (
+            <motion.span
+            key={index}
+            initial={{opacity: 0}}
+            animate={isInView ? {opacity: 1} : {}}
+            transition={{delay: index * 0.1, duration: 0.5, type: 'spring', stiffness: 100}}
+            >
+            {word}
+            </motion.span>
+        ))}
+            </span>
+            <span className="px-3">
+        {
+        line_2.split('').map((word, index) => (
+            <motion.span
+            key={index}
+            initial={{opacity: 0}}
+            animate={isInView ? {opacity: 1} : {}}
+            transition={{delay: 0.75 + index * 0.1, duration: 0.5, type: 'spring', stiffness: 100}}
+            >
+            {word}
+            </motion.span>
+        ))}
+            </span>
+
+        </h1>
         <p className="py-4 text-lg col-start-4 col-end-[14] row-start-2 lg:text-left lg:row-start-5 lg:col-start-12 lg:col-end-[16]">
         My Name is <strong>Lorem</strong> and I'm a Multimedia Designer with more than a decade of experience in Graphic- & Web Design, Animation, Illustration and Develpment. 
         </p>

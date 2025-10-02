@@ -16,7 +16,7 @@ const GetInTouch = () => {
           openForm = () => { setForm('openForm')};
 
 return(
-<section id="get-in-touch" className='bg-element-l py-6 px-4 h-[75vh] flex flex-col justify-center items-center transition-all'>
+<section id="get-in-touch" className='py-6 px-4 h-[75vh] flex flex-col justify-center items-center transition-all'>
 {form === 'preForm' && (
     <div className='max-w-3xl flex flex-col justify-center items-center'>
         <h3>
