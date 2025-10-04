@@ -1,6 +1,6 @@
 import Btn from "@/components/ui/Btn";
 import Modal from "@/components/modals";
-import FrontPageAnimation from "./animation";
+import FrontPageAnimation from "./Animation";
 import { motion, useInView } from "framer-motion";   
 import { useState, useRef } from "react";
 
