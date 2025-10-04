@@ -1,11 +1,11 @@
 import React from 'react';
 import ClientLogos from '@/components/data/ClientLogos';
-import ClientLogo from './ClientLogo';
+import RefCarousel from './Carousel';
 
 const References = () => {
   return (
-    <section className="w-full py-5 px-4 sm:px-4 md:min-h-[70vh] flex justify-center items-center flex-col">
-      <div className="max-w-screen-xl w-full flex flex-col pb-6 md:pb-12 text-left">
+    <section id="references" className="w-full pt-5 px-4 sm:px-4 md:min-h-[70vh] flex justify-center items-center flex-col">
+      <div className="max-w-screen-xl w-full flex flex-col text-left">
         <h3>
           <span className="highlight">Who used</span><br /> Lorem Ipsum
         </h3>
@@ -14,18 +14,8 @@ const References = () => {
           Working both for and with many of these revelutionary companies I highly recommend visiting their sites... take a look.
         </p>
       </div>
-      <div className=" references min-w-[300%] flex flex-row">
-        {
-          ClientLogos.map(logo => (
-            <ClientLogo
-              key={logo.id}
-              id={logo.id}
-              image={logo.image}
-              text={logo.text}
-              link={logo.link}
-            />
-          ))
-        }
+      <div className="references max-w-full">
+        <RefCarousel />
       </div>
     </section>
   );

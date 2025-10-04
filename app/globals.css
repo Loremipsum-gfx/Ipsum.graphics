@@ -91,7 +91,7 @@ h4 {
 }
 h5,
 h6 {
-  @apply pb-4 font-bold text-xl;
+  @apply pb-1 font-bold text-xl;
 }
 body,
 p,
@@ -189,6 +189,12 @@ body.loading #lorem-menu-button {
   cursor: pointer;
   z-index: 2;
 }
+@supports (bottom: env(safe-area-inset-bottom)) {
+  #lorem-menu-button {
+    bottom: calc(30px + env(safe-area-inset-bottom));
+  }
+}
+
 #lorem-menu-button:hover {
   animation: scaleUpHover 1s ease-out forwards;
 }
@@ -339,14 +345,6 @@ body.loading #lorem-frame {
   min-height: 33vh;
   max-width: 95vw;
   margin: 4rem 0;
-}
-.references {
-  animation: rotate 30s linear infinite;
-}
-@keyframes rotate {
-  to {
-    transform: translate(-33.33%);
-  }
 }
 .odometer .odometer-digit {
   padding-inline: 0.5rem !important;

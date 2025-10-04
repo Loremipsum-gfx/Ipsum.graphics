@@ -1,6 +1,7 @@
 "use client";
 
 import {useState, useEffect } from 'react';
+import lorem from '@/components/data/lorem';
 
 export default function Menu() {
   const [menu, setMenu] = useState(false);
@@ -37,11 +38,11 @@ useEffect(() => {
         <nav id="lorem-menu-frame" className="flex w-full flex-col justify-center items-center relative no-underline uppercase text-justify leading-tight text-9xl
         before:absolute before:font-headers before:leading-[0.85] before:bottom-[100%] before:text-transparent
         after:absolute after:font-headers after:leading-[0.85] after:top-[100%] after:text-transparent">
-          <a href={origin || "/"}  style={{ left: '4vw' }} title="Go to the frontpage">Home</a>
-          <a href="#get-in-touch"  onClick={toggleMenu} style={{ right: '4vw' }} title="Contact coming soon">Contact</a>
-          <a href="#" style={{ left: '2vw' }} title="Portfolio coming soon">Portfolio</a>
-          <a href="https://blog.loremipsum.graphics" style={{ right: '4vw' }} title="Blog coming soon">Blog</a>
-          <a href="#about-lorem"  onClick={toggleMenu} style={{ left: '4vw' }} title=" About.. coming soon">About</a>
+          <a href={origin || "/"}  style={{ left: '4vw' }} title="Start over">Home</a>
+          <a href="#references"  style={{ right: '4vw' }} onClick={toggleMenu} title="Start over">Work</a>
+          <a href="#about-lorem"  onClick={toggleMenu} style={{ right: '4vw' }} title=" About.. coming soon">About</a>
+          <a href="#get-in-touch"  onClick={toggleMenu} style={{ left: '4vw' }} title="Contact me directly">Contact</a>
+          <a href={lorem.social.LinkedIn} target="_blank" style={{ right: '4vw' }} title="Visit me on LinkedIn">LinkedIn</a>
         </nav>
       </div>
     </>

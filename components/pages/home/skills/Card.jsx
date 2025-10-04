@@ -13,15 +13,16 @@ const odd = id % 2 === 0;
 					initial={{opacity: 0, scale: 0.75}}
 					whileInView={{opacity: 1, scale: 1}}
 					transition={{delay:0.25, duration: 0.5}}
-				className='absolute bottom-0 left-0 w-full h-[120%] overflow-hidden origin-bottom'>
-					<img src={img} alt="" className='absolute top-5 group-hover:top-0' style={{transition: '550ms ease all'}}/>
+				className='absolute bottom-0 left-0 w-full h-[130%] overflow-hidden origin-bottom'>
+					<img src={img} alt="" className='absolute top-0 group-hover:-top-4' style={{transition: '550ms ease all'}}/>
 				</motion.div>
 			</div>
 			<div className={`max-w-[64ch] pt-4 md:pt-4 pb-6 text-left md:px-0 flex-initial ${odd ? 'md:pr-6' : 'md:pl-6 flex-in'}`}>
 				<h5>{title}</h5>
 				<p className='pb-4'>{desc}</p>
 				<div className='group-hover:scale-105 w-fit' style={{transition: '750ms ease all'}}>
-				<Btn variant="small" onClick={cta}>see more</Btn>
+				{// <Btn variant="small" onClick={cta}>see more</Btn>
+				} 
 				</div>
 			</div> 
 		</div>
