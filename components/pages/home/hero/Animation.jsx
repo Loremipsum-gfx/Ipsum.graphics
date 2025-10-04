@@ -6,12 +6,31 @@ import { useEffect, useState, useRef } from "react";
 const FrontPageAnimation = () => {
   const [pos, setPos] = useState({ x: 0, y: 0 });
   const [src, setSrc] = useState("/graphics/video/animation/loremscroll/0001.png");
+  const [loaded, setLoaded] = useState(false);
 
   const scrollRef = useRef(null);
   const containerRef = useRef(null);
   const isInView = useInView(containerRef, { amount: 0.3 });
 
+  // Preload images
+  useEffect(() => {
+    const totalFrames = 50;
+    let loadedCount = 0;
 
+    for (let i = 1; i <= totalFrames; i++) {
+      const num = String(i).padStart(4, "0");
+      const img = new Image();
+      img.src = `/graphics/video/animation/loremscroll/${num}.png`;
+      img.onload = () => {
+        loadedCount++;
+        if (loadedCount === totalFrames) {
+          setLoaded(true);
+        }
+      };
+    }
+  }, []);
+
+  // Track mouse movement
   useEffect(() => {
     const handleMouseMove = (e) => {
       if (!isInView) return;
@@ -23,7 +42,6 @@ const FrontPageAnimation = () => {
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, [isInView]);
 
-  
   useEffect(() => {
     scrollRef.current = document.querySelector("#lorem-frame");
   }, []);
@@ -44,40 +62,46 @@ const FrontPageAnimation = () => {
     <motion.div
       ref={containerRef}
       className="w-full h-full relative flex items-center justify-center"
-       initial={{ scale: 0 }}
-        whileInView={{ scale: 1.2 }}
-        transition={{ delay: 1.5, type: "spring", stiffness: 280 }}
+      initial={{ scale: 0 }}
+      whileInView={{ scale: 1.2 }}
+      transition={{ delay: 1.5, type: "spring", stiffness: 280 }}
     >
-      {/* main animation frame */}
-      <img
-        src={src}
-        style={{
-          width: "75%",
-          objectFit: "contain",
-        }}
-      />
+      {!loaded ? (
+        <div className="text-white">Loading animation...</div>
+      ) : (
+        <>
+          {/* main animation frame */}
+          <img
+            src={src}
+            style={{
+              width: "75%",
+              objectFit: "contain",
+            }}
+          />
 
-      {/* pupil box overlay */}
-      <motion.div
-        animate={{
-          x: pos.x * 20,
-          y: pos.y * 10,
-        }}
-        transition={{ type: "spring", stiffness: 120, damping: 10 }}
-        style={{
-          backgroundImage: "url(/graphics/video/animation/loremscroll/pupils.png)",
-          backgroundSize: "100%",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-          width: "30%",
-          height: "4%",
-          minHeight: "24px",
-          position: "absolute",
-          top: "48%",
-          left: "38%",
-          zIndex: 1,
-        }}
-      />
+          {/* pupil box overlay */}
+          <motion.div
+            animate={{
+              x: pos.x * 20,
+              y: pos.y * 10,
+            }}
+            transition={{ type: "spring", stiffness: 120, damping: 10 }}
+            style={{
+              backgroundImage: "url(/graphics/video/animation/loremscroll/pupils.png)",
+              backgroundSize: "100%",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+              width: "30%",
+              height: "4%",
+              minHeight: "24px",
+              position: "absolute",
+              top: "48%",
+              left: "38%",
+              zIndex: 1,
+            }}
+          />
+        </>
+      )}
     </motion.div>
   );
 };
