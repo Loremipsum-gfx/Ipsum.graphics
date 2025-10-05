@@ -12,8 +12,8 @@ const Work = () =>{
                 <span className="highlight">Made with</span><br/> Lorem Ipsum
                 </h3>
                 <p>
-                I’ve been working with many different client and projects throughout the years... 
-                I’m free to chat or help out if you need help with anything Graphic design, animation, video editing webdesign. I hope to hear.
+                I’ve been working with many different projects throughout the years... 
+                Here is a collection of some of my favorite projects, that I'm allowed to disclose.
                 </p>
             </div>
             <div className="py-8">

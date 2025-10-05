@@ -23,7 +23,7 @@ return(
             <span className="highlight">Get in touch</span><br/> with Lorem
         </h3>
         <p className='pb-4 md:pb-8'>
-        I’m free to chat or help out if you need help with anything Graphic design, animation, video editing webdesign. I hope to hear from you soon
+        I’m free to chat if you need help with a projedt, or just need professional consultation.
         </p>
         <Btn variant='primary' onClick={() => {initTrans()}} tooltip={{shown: true, img: '', txt: 'come say hello ☕', offset: -60}}>Contact me now</Btn>
     </div>

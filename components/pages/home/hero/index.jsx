@@ -42,16 +42,19 @@ return (
   </span>
     </h1>
     <p className="py-4 text-lg col-start-4 col-end-[14] row-start-2 lg:text-left lg:row-start-5 lg:col-start-12 lg:col-end-[16]">
-    My Name is <strong>Lorem</strong> and I'm a Danish Multimedia Designer with more than a decade of experience. 
+    My Name is <strong>Lorem</strong> and I'm a Danish Multimedia Designer
+    with more than a decade of experience across print, motion, and web. And for clarity, my name is indeed Lorem. Reach out, and get in touch, and you'll leave with a funny storry on top.
     </p>
     <div className="flex justify-center items-center col-start-4 col-end-[14] row-start-3 flex-col lg:flex-row lg:justify-start lg:row-start-5 lg:col-start-2 lg:col-end-7">
     <Btn variant="primary" onClick={() => document.location.href = "#get-in-touch"} >
     Contact me now!
     </Btn>
+    { /*
     <Btn variant="secondary" onClick={() => setPopup('video')} tooltip={{shown: true, img: '/graphics/bitmap/lorem-ipsum-headshot.png', txt: 'Let me explain...', offset:-40}}>
     <img src="/graphics/svg/playbutton.svg" className="w-12 p-2" alt="play video button"/>
     Quick introduction!
     </Btn>
+*/ }
     </div>
     <div className=" hidden lg:flex lg:col-start-13 lg:row-start-6 lg:rotate-90 lg:translate-y-5">
     <img src="/graphics/svg/arrow-pointing-right.svg" alt="Meet Lorem" className=" pointer-events-none rotate-90 sm:rotate-0" />

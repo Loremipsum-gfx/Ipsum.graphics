@@ -35,7 +35,7 @@ useEffect(() => {
         </svg>
       </div>
       <div id="lorem-menu">
-        <nav id="lorem-menu-frame" className="flex w-full flex-col justify-center items-center relative no-underline uppercase text-justify leading-tight text-9xl
+        <nav id="lorem-menu-frame" className="flex w-full flex-col justify-center items-center relative no-underline uppercase text-justify leading-tight text-7xl
         before:absolute before:font-headers before:leading-[0.85] before:bottom-[100%] before:text-transparent
         after:absolute after:font-headers after:leading-[0.85] after:top-[100%] after:text-transparent">
           <a href={origin || "/"}  style={{ left: '4vw' }} title="Start over">Home</a>

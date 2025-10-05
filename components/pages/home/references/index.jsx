@@ -9,9 +9,9 @@ const References = () => {
         <h3>
           <span className="highlight">Who used</span><br /> Lorem Ipsum
         </h3>
-        <p className='w-[64ch] max-w-full'>
-          As a Multimedia Designer I have had the luxury of working with and for some of the best and brightest in many different industries. 
-          Working both for and with many of these revelutionary companies I highly recommend visiting their sites... take a look.
+        <p className='w-full max-w-[64ch]'>
+          Throughout theyears, I have had the privilege of collaborating with a diverse range of skilful people,
+          from innovative startups to established enterprises. Here a few of the companies I have worked with and for.
         </p>
       </div>
       <div className="references max-w-full">

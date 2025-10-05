@@ -179,7 +179,7 @@ body.loading #lorem-menu-button {
   display: flex;
   width: 75px;
   aspect-ratio: 1;
-  position: absolute;
+  position: fixed;
   bottom: 30px;
   right: 30px;
   background: var(--color-dark);

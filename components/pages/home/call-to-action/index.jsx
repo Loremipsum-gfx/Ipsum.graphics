@@ -13,9 +13,9 @@ className=" max-w-screen-xl grid grid-cols-1 md:grid-cols-2 py-5 items-center">
     </h3>
     <div>
     <p className="md:text-left">
-        Let's get it out of the way! I do not do well in front or behind a lense, nor do I do full stack development, or 'content creation'.
-        My core experties lies in the field of visual comminication through, Graphic Design. Through the years, I've also dived into Animation, Illustration, Web Design, User Experiences and Frontend Develpment.
-        My own core values lies in a 360 degree creative service, from consultation to a full branded package. 
+        Just like lorem ipsum, I'm a versatile Multimedia Designer,
+        I can deliver the work you need, or help as a consultant on your own creative projects
+        
     </p>
     </div>
 </motion.div>
