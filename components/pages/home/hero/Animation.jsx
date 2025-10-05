@@ -81,8 +81,8 @@ const FrontPageAnimation = () => {
       {/* pupil box overlay */}
       <motion.div
         animate={{
-          x: document.documentElement.clientWidth > 768 ? (pos.x * 20) : 0,
-          y: document.documentElement.clientWidth > 768 ? (pos.y * 10) : -7,
+          x: pos.x * 20,
+          y: pos.y * 10,
         }}
         transition={{ type: "spring", stiffness: 120, damping: 10 }}
         style={{
