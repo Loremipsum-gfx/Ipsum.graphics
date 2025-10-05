@@ -1,3 +1,5 @@
+'use client';
+
 import Btn from "@/components/ui/Btn";
 import Modal from "@/components/modals";
 import FrontPageAnimation from "./Animation";
