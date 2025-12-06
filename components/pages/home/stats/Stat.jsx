@@ -1,5 +1,4 @@
 "use client";
-import 'odometer/themes/odometer-theme-default.css'
 import React, { useEffect, useRef } from 'react';
 
 const Stat = ({ number }) => {
