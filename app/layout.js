@@ -2,6 +2,7 @@ import "./globals.css";
 import Top from "@/components/layout/top-bar";
 import Menu from "@/components/layout/menu";
 import Footer from "@/components/layout/footer";
+import CookieModal from "@/components/modals/cookieModal";
 
 export const metadata = {
   title: "Lorem | Multimedia Designer",
@@ -50,6 +51,7 @@ export default function RootLayout({ children }) {
             <div id="lorem-body">
               <div className=" w-full m-auto">
                 {children}
+                <CookieModal />
                 <Footer />
               </div>
             </div>
